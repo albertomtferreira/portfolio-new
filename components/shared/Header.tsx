@@ -47,6 +47,7 @@ const Header: React.FC = () => {
     }, 100);
   }, []);
 
+
   const NavItems = ({ isMobile = false }: { isMobile?: boolean }) => (
     <>
       {menuItems.map((item) => (
