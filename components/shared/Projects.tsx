@@ -133,7 +133,7 @@ const Projects: React.FC = () => {
   }, [isPaused]);
 
   return (
-    <section id="projects" className="py-10 sm:py-20">
+    <section id="projects" className="py-20">
       <h2 className="text-3xl font-semibold mb-6">Projects</h2>
       <div
         ref={scrollRef}
