@@ -9,11 +9,11 @@ const SkillIcon: React.FC<{ Icon: React.ElementType; name: string; color: string
   <TooltipProvider>
     <Tooltip>
       <TooltipTrigger className="w-full">
-        <div className="flex items-center justify-center lg:justify-start p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors duration-200">
+        <div className="flex flex-col lg:flex-row items-center p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors duration-200">
           <div className={`flex items-center justify-center w-10 h-10 rounded-full ${color}`}>
             <Icon className="w-6 h-6 text-white" />
           </div>
-          <span className="ml-2 text-sm font-medium text-gray-700 truncate hidden lg:block flex-grow">
+          <span className="mt-2 lg:mt-0 lg:ml-2 text-sm font-medium text-gray-700 text-center lg:text-left truncate lg:flex-grow">
             {name}
           </span>
         </div>
