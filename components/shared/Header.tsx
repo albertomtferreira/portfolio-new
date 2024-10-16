@@ -95,12 +95,11 @@ const Header: React.FC = () => {
   return (
     <header
       className={`
-        sticky top-0 z-50 transition-all duration-300 ease-in-out
+        sticky top-0 z-50 transition-all duration-300 ease-in-out 
         ${isScrolled
-          ? 'bg-white/80 backdrop-blur-md shadow-md'
-          : 'bg-white shadow'}
-      `}
-    >
+          ? 'bg-background/80 backdrop-blur-md shadow-md'
+          : 'bg-background shadow'}
+      `}>
       <nav className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
           <Link href="/" className="text-xl font-bold">Your Logo</Link>

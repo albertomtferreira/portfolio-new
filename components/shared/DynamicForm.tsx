@@ -101,7 +101,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ onSubmit }) => {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full" disabled={isSubmitting}>
+        <Button type="submit" variant="default" className="w-full" disabled={isSubmitting}>
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </Button>
       </form>

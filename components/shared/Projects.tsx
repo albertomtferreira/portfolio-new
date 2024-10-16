@@ -133,8 +133,8 @@ const Projects: React.FC = () => {
   }, [isPaused]);
 
   return (
-    <section id="projects" className="py-20">
-      <h2 className="text-3xl font-semibold mb-6">Projects</h2>
+    <section id="projects" className="py-20 bg-background">
+      <h2 className="text-3xl font-semibold mb-10 text-center">Projects</h2>
       <div
         ref={scrollRef}
         className="flex overflow-x-hidden space-x-4 pb-4"
@@ -144,7 +144,7 @@ const Projects: React.FC = () => {
         {[...projects, ...projects].map((project, index) => (
           <Card
             key={index}
-            className="flex-none w-80 sm:h-96 h-64 flex flex-col cursor-pointer"
+            className="flex-none w-80 sm:h-96 h-64 flex flex-col cursor-pointer bg-foreground/5 border-foreground/30 rounded-md shadow-md"
             onClick={() => setSelectedProject(project)}
           >
             <Image src={project.image} alt={project.title} width={320} height={160} className="w-full h-1/3 object-cover" />
@@ -192,10 +192,10 @@ const Projects: React.FC = () => {
               </div>
               <DialogFooter>
                 <div className='flex gap-2 justify-between w-full'>
-                  <Button asChild>
+                  <Button asChild variant="default">
                     <a href={selectedProject.liveDemo} target="_blank" rel="noopener noreferrer">Live Demo</a>
                   </Button>
-                  <Button asChild>
+                  <Button asChild variant="default">
                     <a href={selectedProject.githubRepo} target="_blank" rel="noopener noreferrer">GitHub Repo</a>
                   </Button>
                 </div>
