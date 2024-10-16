@@ -15,7 +15,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-const menuItems = ['home', 'about', 'projects', 'skills', 'contact'];
+const menuItems = ['home', 'about', 'projects', 'contact'];
 const hobbies = [
   { name: 'Bread Baking', href: '/bread-baking' },
   { name: 'Reiki', href: '/reiki' },
