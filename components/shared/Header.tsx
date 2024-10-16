@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { Menu, ChevronDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -15,7 +15,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-const menuItems = ['home', 'about', 'projects', 'skills', 'contact'];
+const menuItems = ['home', 'about', 'projects', 'contact'];
 const hobbies = [
   { name: 'Bread Baking', href: '/bread-baking' },
   { name: 'Reiki', href: '/reiki' },
@@ -46,7 +46,6 @@ const Header: React.FC = () => {
       }
     }, 100);
   }, []);
-
 
   const NavItems = ({ isMobile = false }: { isMobile?: boolean }) => (
     <>
