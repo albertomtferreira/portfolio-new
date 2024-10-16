@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="mb-20">
+    <section id="contact" className="py-20">
       <h2 className="text-3xl font-semibold mb-6">Contact Me</h2>
       <div className="grid md:grid-cols-2 gap-6">
         <Card>
