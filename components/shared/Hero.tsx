@@ -110,7 +110,7 @@ const SocialIcon = ({ Icon, href }: SocialIconProps) => {
 
 const Hero = () => {
   return (
-    <section id="home" className="py-20 bg-gray-50">
+    <section id="home" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
           {/* Left side */}
