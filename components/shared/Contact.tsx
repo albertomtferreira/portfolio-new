@@ -1,4 +1,4 @@
-// components/Contact.tsx
+// components/shared/Contact.tsx
 "use client"
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
@@ -7,19 +7,23 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 
 const DynamicForm = dynamic(() => import('./DynamicForm'), { ssr: false });
 
-const CustomToast: React.FC<{ message: string; onClose: () => void }> = ({ message, onClose }) => (
-  <div className="fixed bottom-4 right-4 bg-green-500 text-white p-4 rounded shadow-lg">
+const CustomToast: React.FC<{ message: string; onClose: () => void; isError?: boolean }> = ({ message, onClose, isError = false }) => (
+  <div className={`fixed bottom-4 right-4 ${isError ? 'bg-red-500' : 'bg-green-500'} text-white p-4 rounded shadow-lg`}>
     {message}
     <button onClick={onClose} className="ml-4 text-sm underline">Close</button>
   </div>
 );
 
 const Contact: React.FC = () => {
-  const [showToast, setShowToast] = useState(false);
+  const [toast, setToast] = useState<{ show: boolean; message: string; isError: boolean }>({ show: false, message: '', isError: false });
 
-  const handleSubmit = (values: any) => {
+  const handleSubmit = (values: any, status: 'success' | 'error') => {
     console.log(values);
-    setShowToast(true);
+    if (status === 'success') {
+      setToast({ show: true, message: "Thank you for your message. I'll get back to you soon.", isError: false });
+    } else {
+      setToast({ show: true, message: "There was an error sending your message. Please try again later.", isError: true });
+    }
   };
 
   return (
@@ -56,10 +60,11 @@ const Contact: React.FC = () => {
           </CardContent>
         </Card>
       </div>
-      {showToast && (
+      {toast.show && (
         <CustomToast
-          message="Thank you for your message. I'll get back to you soon."
-          onClose={() => setShowToast(false)}
+          message={toast.message}
+          onClose={() => setToast({ ...toast, show: false })}
+          isError={toast.isError}
         />
       )}
     </section>
