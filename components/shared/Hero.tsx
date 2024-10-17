@@ -74,13 +74,13 @@ const HobbyItem: React.FC<HobbyProps> = ({ hobby }) => {
 
   return (
     <li
-      className="flex items-center justify-center mb-4 p-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-gray-200 cursor-default"
+      className="flex items-center justify-center mb-4 p-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-foreground/50 cursor-default"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <hobby.LeftIcon size={24} className={`mr-2 transition-colors duration-300 ${isHovered ? 'text-blue-500' : 'text-gray-600'}`} />
-      <span className={`text-lg transition-colors duration-300 ${isHovered ? 'text-blue-700 font-semibold' : 'text-gray-600'}`}>{hobby.name}</span>
-      <hobby.RightIcon size={24} className={`ml-2 transition-colors duration-300 ${isHovered ? 'text-blue-500' : 'text-gray-600'}`} />
+      <hobby.LeftIcon size={24} className={`mr-2 transition-colors duration-300 ${isHovered ? 'text-accent ' : 'text-foreground'}`} />
+      <span className={`text-lg transition-colors duration-300 ${isHovered ? 'text-accent font-semibold ' : 'text-foreground'}`}>{hobby.name}</span>
+      <hobby.RightIcon size={24} className={`ml-2 transition-colors duration-300 ${isHovered ? 'text-accent ' : 'text-foreground'}`} />
     </li>
   );
 };
@@ -98,12 +98,12 @@ const SocialIcon = ({ Icon, href }: SocialIconProps) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`p-2 rounded-full transition-all duration-300 ease-in-out transform hover:scale-110 ${isHovered ? 'bg-gray-200' : ''
+      className={`p-2 rounded-lg transition-all duration-300 ease-in-out transform hover:scale-110 ${isHovered ? 'bg-foreground/50' : ''
         }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <Icon size={24} className={`transition-colors duration-300 ${isHovered ? 'text-blue-500' : 'text-gray-600'}`} />
+      <Icon size={24} className={`transition-colors duration-300 ${isHovered ? 'text-accent' : 'text-foreground'}`} />
     </a>
   );
 };
@@ -127,7 +127,7 @@ const Hero = () => {
                 }}
               />
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center">Your Name</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center text-foreground">Your Name</h1>
             <ul className="mb-8 w-full">
               {hobbies.map((hobby, index) => (
                 <HobbyItem key={index} hobby={hobby} />
