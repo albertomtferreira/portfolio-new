@@ -8,7 +8,7 @@ import Projects from "@/components/shared/Projects";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-foreground/10 ">
+    <div className="min-h-screen">
       <Header />
       <main className="container mx-auto px-6 ">
         <Hero />
